@@ -1,0 +1,58 @@
+const { v4: uuidv4 } = require('uuid');
+
+const sqlTemplate = `
+INSERT INTO public.product
+(id, "createdAt", "updatedAt", "deletedAt", name, description, type, grade, "isDeleteRequest")
+VALUES
+  ('${uuidv4()}', CURRENT_TIMESTAMP(6), CURRENT_TIMESTAMP(6), NULL, 'A-Body Suit', NULL, 'A- Garments', 'A', false),
+  ('${uuidv4()}', CURRENT_TIMESTAMP(6), CURRENT_TIMESTAMP(6), NULL, 'A-Body Suit Sleeveless', NULL, 'A- Garments', 'A', false),
+  ('${uuidv4()}', CURRENT_TIMESTAMP(6), CURRENT_TIMESTAMP(6), NULL, 'A-Sleep Suit', NULL, 'A- Garments', 'A', false),
+  ('${uuidv4()}', CURRENT_TIMESTAMP(6), CURRENT_TIMESTAMP(6), NULL, 'A-Pyjama top', NULL, 'A- Garments', 'A', false),
+  ('${uuidv4()}', CURRENT_TIMESTAMP(6), CURRENT_TIMESTAMP(6), NULL, 'A-Pyjama Bottom', NULL, 'A- Garments', 'A', false),
+  ('${uuidv4()}', CURRENT_TIMESTAMP(6), CURRENT_TIMESTAMP(6), NULL, 'A-Romper', NULL, 'A- Garments', 'A', false),
+  ('${uuidv4()}', CURRENT_TIMESTAMP(6), CURRENT_TIMESTAMP(6), NULL, 'B-Body Suit', NULL, 'B- Garments', 'B', false),
+  ('${uuidv4()}', CURRENT_TIMESTAMP(6), CURRENT_TIMESTAMP(6), NULL, 'B-Body Suit Sleeveless', NULL, 'B- Garments', 'B', false),
+  ('${uuidv4()}', CURRENT_TIMESTAMP(6), CURRENT_TIMESTAMP(6), NULL, 'B-Sleep Suit', NULL, 'B- Garments', 'B', false),
+  ('${uuidv4()}', CURRENT_TIMESTAMP(6), CURRENT_TIMESTAMP(6), NULL, 'B-Pyjama top', NULL, 'B- Garments', 'B', false),
+  ('${uuidv4()}', CURRENT_TIMESTAMP(6), CURRENT_TIMESTAMP(6), NULL, 'B-Pyjama Bottom', NULL, 'B- Garments', 'B', false),
+  ('${uuidv4()}', CURRENT_TIMESTAMP(6), CURRENT_TIMESTAMP(6), NULL, 'B-Romper', NULL, 'B- Garments', 'B', false),
+  ('${uuidv4()}', CURRENT_TIMESTAMP(6), CURRENT_TIMESTAMP(6), NULL, 'TKT 12false full cone', NULL, 'Thread Cone', 'N/A', false),
+  ('${uuidv4()}', CURRENT_TIMESTAMP(6), CURRENT_TIMESTAMP(6), NULL, 'TKT 16false full cone', NULL, 'Thread Cone', 'N/A', false),
+  ('${uuidv4()}', CURRENT_TIMESTAMP(6), CURRENT_TIMESTAMP(6), NULL, 'TKT 12false used cone', NULL, 'Thread Cone', 'N/A', false),
+  ('${uuidv4()}', CURRENT_TIMESTAMP(6), CURRENT_TIMESTAMP(6), NULL, 'TKT 16false used cone', NULL, 'Thread Cone', 'N/A', false),
+  ('${uuidv4()}', CURRENT_TIMESTAMP(6), CURRENT_TIMESTAMP(6), NULL, 'Interlock Printed Roll/Bale', NULL, 'Fabric', 'N/A', false),
+  ('${uuidv4()}', CURRENT_TIMESTAMP(6), CURRENT_TIMESTAMP(6), NULL, 'Interlock Solid Mix Color Roll/Bale', NULL, 'Fabric', 'N/A', false),
+  ('${uuidv4()}', CURRENT_TIMESTAMP(6), CURRENT_TIMESTAMP(6), NULL, 'Interlock White Roll/Bale', NULL, 'Fabric', 'N/A', false),
+  ('${uuidv4()}', CURRENT_TIMESTAMP(6), CURRENT_TIMESTAMP(6), NULL, 'Interlock Off-White Roll/Bale', NULL, 'Fabric', 'N/A', false),
+  ('${uuidv4()}', CURRENT_TIMESTAMP(6), CURRENT_TIMESTAMP(6), NULL, 'School pant fabr ic roll', NULL, 'Fabric', 'N/A', false),
+  ('${uuidv4()}', CURRENT_TIMESTAMP(6), CURRENT_TIMESTAMP(6), NULL, 'Rib Solid Roll/Bale', NULL, 'Fabric', 'N/A', false),
+  ('${uuidv4()}', CURRENT_TIMESTAMP(6), CURRENT_TIMESTAMP(6), NULL, 'Relaxed Fabric Printed', NULL, 'Fabric', 'N/A', false),
+  ('${uuidv4()}', CURRENT_TIMESTAMP(6), CURRENT_TIMESTAMP(6), NULL, 'Relaxed Fabric Solid', NULL, 'Fabric', 'N/A', false),
+  ('${uuidv4()}', CURRENT_TIMESTAMP(6), CURRENT_TIMESTAMP(6), NULL, 'Relaxed Fabric White', NULL, 'Fabric', 'N/A', false),
+  ('${uuidv4()}', CURRENT_TIMESTAMP(6), CURRENT_TIMESTAMP(6), NULL, 'Relaxed Fabric Off-White', NULL, 'Fabric', 'N/A', false),
+  ('${uuidv4()}', CURRENT_TIMESTAMP(6), CURRENT_TIMESTAMP(6), NULL, 'Single Jersey', NULL, 'Fabric', 'N/A', false),
+  ('${uuidv4()}', CURRENT_TIMESTAMP(6), CURRENT_TIMESTAMP(6), NULL, 'Lycra', NULL, 'Fabric', 'N/A', false),
+  ('${uuidv4()}', CURRENT_TIMESTAMP(6), CURRENT_TIMESTAMP(6), NULL, 'Fusing', NULL, 'Fabric', 'N/A', false),
+  ('${uuidv4()}', CURRENT_TIMESTAMP(6), CURRENT_TIMESTAMP(6), NULL, 'Tapata', NULL, 'Fabric', 'N/A', false),
+  ('${uuidv4()}', CURRENT_TIMESTAMP(6), CURRENT_TIMESTAMP(6), NULL, 'Solid Cut Piece 1-5 yards', NULL, 'Fabric', 'N/A', false),
+  ('${uuidv4()}', CURRENT_TIMESTAMP(6), CURRENT_TIMESTAMP(6), NULL, 'Printed Cut Piece 1-5 yards', NULL, 'Fabric', 'N/A', false),
+  ('${uuidv4()}', CURRENT_TIMESTAMP(6), CURRENT_TIMESTAMP(6), NULL, 'White Cut Piece 1-5 yards', NULL, 'Fabric', 'N/A', false),
+  ('${uuidv4()}', CURRENT_TIMESTAMP(6), CURRENT_TIMESTAMP(6), NULL, 'Solid Cut Piece above 5 yards', NULL, 'Fabric', 'N/A', false),
+  ('${uuidv4()}', CURRENT_TIMESTAMP(6), CURRENT_TIMESTAMP(6), NULL, 'Printed Cut Piece above 5 yards', NULL, 'Fabric', 'N/A', false),
+  ('${uuidv4()}', CURRENT_TIMESTAMP(6), CURRENT_TIMESTAMP(6), NULL, 'White Cut Piece above 5 yards', NULL, 'Fabric', 'N/A', false),
+  ('${uuidv4()}', CURRENT_TIMESTAMP(6), CURRENT_TIMESTAMP(6), NULL, 'Solid,printed Cut Piece below 1 yard', NULL, 'Fabric', 'N/A', false),
+  ('${uuidv4()}', CURRENT_TIMESTAMP(6), CURRENT_TIMESTAMP(6), NULL, 'Printed Offcut', NULL, 'Offcut Items', 'N/A', false),
+  ('${uuidv4()}', CURRENT_TIMESTAMP(6), CURRENT_TIMESTAMP(6), NULL, 'Solid Offcut', NULL, 'Offcut Items', 'N/A', false),
+  ('${uuidv4()}', CURRENT_TIMESTAMP(6), CURRENT_TIMESTAMP(6), NULL, 'White Offcut', NULL, 'Offcut Items', 'N/A', false),
+  ('${uuidv4()}', CURRENT_TIMESTAMP(6), CURRENT_TIMESTAMP(6), NULL, 'Binding Offcut', NULL, 'Offcut Items', 'N/A', false),
+  ('${uuidv4()}', CURRENT_TIMESTAMP(6), CURRENT_TIMESTAMP(6), NULL, 'Panel Cut', NULL, 'Offcut Items', 'N/A', false),
+  ('${uuidv4()}', CURRENT_TIMESTAMP(6), CURRENT_TIMESTAMP(6), NULL, 'Piping', NULL, 'Offcut Items', 'N/A', false),
+  ('${uuidv4()}', CURRENT_TIMESTAMP(6), CURRENT_TIMESTAMP(6), NULL, 'School pant offcut', NULL, 'Offcut Items', 'N/A', false),
+  ('${uuidv4()}', CURRENT_TIMESTAMP(6), CURRENT_TIMESTAMP(6), NULL, 'Used paper', NULL, 'Offcut Items', 'N/A', false),
+  ('${uuidv4()}', CURRENT_TIMESTAMP(6), CURRENT_TIMESTAMP(6), NULL, 'Cardboard', NULL, 'Offcut Items', 'N/A', false),
+  ('${uuidv4()}', CURRENT_TIMESTAMP(6), CURRENT_TIMESTAMP(6), NULL, 'Cardboard Pipe', NULL, 'Offcut Items', 'N/A', false),
+  ('${uuidv4()}', CURRENT_TIMESTAMP(6), CURRENT_TIMESTAMP(6), NULL, 'Polythene', NULL, 'Offcut Items', 'N/A', false),
+  ('${uuidv4()}', CURRENT_TIMESTAMP(6), CURRENT_TIMESTAMP(6), NULL, 'Empty cone', NULL, 'Offcut Items', 'N/A', false);
+`;
+
+console.log(sqlTemplate);
